@@ -1,0 +1,11 @@
+#######################################################
+#                                                     #
+#                   ReignLobby v1.0                   #
+#                    Messages file                    #
+#                                                     #
+#######################################################
+
+no-perm: "&CNo tienes permiso para ejecutar este comando."
+vipjoin:
+  - ""
+  - ""
