@@ -5,7 +5,8 @@
 #                                                     #
 #######################################################
 
-no-perm: "&CNo tienes permiso para ejecutar este comando."
-vipjoin:
-  - ""
-  - ""
+messages:
+  nopermission: "&CNo tienes permiso para ejecutar este comando."
+  vipjoin:
+    - ""
+    - ""
