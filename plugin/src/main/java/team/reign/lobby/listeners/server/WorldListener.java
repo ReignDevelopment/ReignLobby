@@ -1,4 +1,4 @@
-package team.reign.lobby.listeners;
+package team.reign.lobby.listeners.server;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,9 +15,11 @@ public class WorldListener implements Listener {
 
     @EventHandler
     public void onBreak(BlockBreakEvent event) {
+
     }
 
     @EventHandler
     public void onPlace(BlockPlaceEvent event) {
+
     }
 }
