@@ -7,6 +7,7 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import team.reign.lobby.ReignLobby;
 
 public class WorldListener implements Listener {
+
     private final ReignLobby reignLobby;
 
     public WorldListener(ReignLobby reignLobby) {
