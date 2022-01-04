@@ -1,0 +1,10 @@
+plugins {
+    id("java")
+    id("com.github.johnrengelman.shadow") version("7.1.1")
+}
+
+dependencies {
+    api(project(":api"))
+    compileOnly("org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT")
+    compileOnly("me.fixeddev:commandflow-bukkit:0.4.0")
+}
