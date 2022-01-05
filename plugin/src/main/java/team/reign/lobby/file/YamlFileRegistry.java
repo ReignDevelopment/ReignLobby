@@ -35,20 +35,12 @@ public class YamlFileRegistry {
 
     public static YamlFileRegistry create(Plugin plugin, String... files)
             throws IOException, InvalidConfigurationException {
+
         Map<String, YamlFile> filesByName = new HashMap<>();
 
         for (String file : files) {
-            String[] split = file.split(":");
-            String name = split[0];
-            YamlFile yamlFile;
-
-            if (split.length == 1) {
-                yamlFile = new YamlFile(plugin, name);
-            } else {
-                yamlFile = new YamlFile(plugin, name, split[1]);
-            }
-
-            filesByName.put(name, yamlFile);
+            YamlFile yamlFile = new YamlFile(plugin, file);
+            filesByName.put(file, yamlFile);
         }
 
         return new YamlFileRegistry(filesByName);
