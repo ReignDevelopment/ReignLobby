@@ -3,8 +3,9 @@ package team.reign.lobby.command;
 import me.fixeddev.commandflow.annotated.CommandClass;
 import me.fixeddev.commandflow.annotated.annotation.Command;
 import org.bukkit.command.CommandSender;
+import team.reign.lobby.ReignLobby;
+import team.reign.lobby.file.FileCreator;
 import team.reign.lobby.file.YamlFile;
-import team.reign.lobby.file.YamlFileRegistry;
 
 import java.util.List;
 
@@ -13,8 +14,9 @@ public class LobbyCommand implements CommandClass {
 
     private final YamlFile messages;
 
-    public LobbyCommand(YamlFileRegistry yamlFileRegistry) {
-        this.messages = yamlFileRegistry.getFile("messages");
+    public LobbyCommand(ReignLobby lobby) {
+        FileCreator fileCreator = new FileCreator(lobby);
+        this.messages = fileCreator.getMessages();
     }
 
     @Command(names = {"help" , ""}, permission = "rlobby.admin", desc = "Help command.")

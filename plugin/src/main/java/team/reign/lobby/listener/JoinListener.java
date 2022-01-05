@@ -5,8 +5,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import team.reign.lobby.ReignLobby;
+import team.reign.lobby.file.FileCreator;
 import team.reign.lobby.file.YamlFile;
-import team.reign.lobby.file.YamlFileRegistry;
 
 import java.util.List;
 
@@ -14,8 +15,9 @@ public class JoinListener implements Listener {
 
     private final YamlFile messages;
 
-    public JoinListener(YamlFileRegistry yamlFileRegistry) {
-        this.messages = yamlFileRegistry.getFile("messages");
+    public JoinListener(ReignLobby lobby) {
+        FileCreator fileCreator = new FileCreator(lobby);
+        this.messages = fileCreator.getMessages();
     }
 
     @EventHandler

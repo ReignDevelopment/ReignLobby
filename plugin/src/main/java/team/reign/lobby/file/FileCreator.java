@@ -9,24 +9,31 @@ import java.io.IOException;
 
 public class FileCreator implements Loader {
 
-    private final ReignLobby reignLobby;
-    private YamlFileRegistry yamlFileRegistry;
+    private final ReignLobby lobby;
+    private YamlFile config;
+    private YamlFile messages;
 
-    public FileCreator(ReignLobby reignLobby) {
-        this.reignLobby = reignLobby;
+    public FileCreator(ReignLobby lobby) {
+        this.lobby = lobby;
+        load();
     }
 
     @Override
     public void load() {
         try {
-           yamlFileRegistry = YamlFileRegistry.create(reignLobby, "config", "messages");
+           config = new YamlFile(lobby, "config");
+           messages = new YamlFile(lobby, "messages");
         } catch(IOException | InvalidConfigurationException e) {
             e.printStackTrace();
         }
     }
 
-    public YamlFileRegistry getYamlFileRegistry() {
-        return yamlFileRegistry;
+    public YamlFile getConfig() {
+        return config;
+    }
+
+    public YamlFile getMessages() {
+        return messages;
     }
 
 }

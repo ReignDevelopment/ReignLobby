@@ -14,10 +14,10 @@ import team.reign.lobby.loader.Loader;
 
 public class CommandLoader implements Loader {
 
-    private final FileCreator fileCreator;
+    private final ReignLobby lobby;
 
-    public CommandLoader(ReignLobby reignLobby) {
-        this.fileCreator = new FileCreator(reignLobby);
+    public CommandLoader(ReignLobby lobby) {
+        this.lobby = lobby;
         load();
     }
 
@@ -33,6 +33,6 @@ public class CommandLoader implements Loader {
         AnnotatedCommandTreeBuilder treeBuilder = new AnnotatedCommandTreeBuilderImpl(injector);
 
         CommandManager commandManager = new BukkitCommandManager("lobby");
-        commandManager.registerCommands(treeBuilder.fromClass(new LobbyCommand(fileCreator.getYamlFileRegistry())));
+        commandManager.registerCommands(treeBuilder.fromClass(new LobbyCommand(lobby)));
     }
 }
