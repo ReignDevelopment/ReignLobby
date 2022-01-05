@@ -1,0 +1,12 @@
+#######################################################
+#                                                     #
+#                   ReignLobby v1.0                   #
+#                    Messages file                    #
+#                                                     #
+#######################################################
+
+messages:
+  nopermission: "&CNo tienes permiso para ejecutar este comando."
+  vipjoin:
+    - ""
+    - ""
