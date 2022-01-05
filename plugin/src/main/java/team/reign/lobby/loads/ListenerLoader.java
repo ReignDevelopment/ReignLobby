@@ -5,7 +5,9 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.event.Listener;
 import team.reign.lobby.ReignLobby;
 import team.reign.lobby.file.FileCreator;
+import team.reign.lobby.listener.DamageListener;
 import team.reign.lobby.listener.JoinListener;
+import team.reign.lobby.listener.QuitListener;
 import team.reign.lobby.loader.Loader;
 
 
@@ -22,7 +24,7 @@ public class ListenerLoader implements Loader {
 
     @Override
     public void load() {
-        registerListeners(new JoinListener(fileCreator.getYamlFileRegistry()));;
+        registerListeners(new JoinListener(fileCreator.getYamlFileRegistry()),new QuitListener(fileCreator.getYamlFileRegistry()),new DamageListener());;
 
     }
 

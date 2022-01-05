@@ -1,0 +1,4 @@
+config:
+  lobby-protection: true
+  join-default-message: true
+  leave-default-message: true
