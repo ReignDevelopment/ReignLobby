@@ -26,6 +26,7 @@ public class YamlFile extends YamlConfiguration {
                 save(file);
             }
             load(file);
+            return;
         }
         load(file);
         save(file);

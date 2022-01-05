@@ -20,4 +20,5 @@ dependencies {
     implementation ("me.yushust.message:core:6.0.17")
     implementation ("team.unnamed.gui:core:2.2.1")
     implementation ("team.unnamed.gui:abstraction:2.2.1")
+    implementation ("me.yushust.inject:core:0.4.5-SNAPSHOT")
 }
