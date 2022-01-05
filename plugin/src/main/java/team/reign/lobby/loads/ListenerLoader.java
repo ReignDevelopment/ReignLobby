@@ -9,6 +9,7 @@ import team.reign.lobby.listener.DamageListener;
 import team.reign.lobby.listener.JoinListener;
 import team.reign.lobby.listener.QuitListener;
 import team.reign.lobby.loader.Loader;
+import team.unnamed.gui.core.GUIListeners;
 
 
 public class ListenerLoader implements Loader {
@@ -24,7 +25,10 @@ public class ListenerLoader implements Loader {
 
     @Override
     public void load() {
-        registerListeners(new JoinListener(fileCreator.getYamlFileRegistry()),new QuitListener(fileCreator.getYamlFileRegistry()),new DamageListener());;
+        registerListeners(new JoinListener(fileCreator.getYamlFileRegistry()),
+                          new QuitListener(fileCreator.getYamlFileRegistry()),
+                          new DamageListener(),
+                          new GUIListeners());;
 
     }
 

@@ -17,7 +17,7 @@ public class LobbyCommand implements CommandClass {
         this.messages = yamlFileRegistry.getFile("messages");
     }
 
-    @Command(names = {"help" , ""}, permission = "rlobby.admin")
+    @Command(names = {"help" , ""}, permission = "rlobby.admin", desc = "Help command.")
     public void helpCommand(CommandSender sender){
         List<String> helpList = messages.getStringList("messages.help");
         for(String message : helpList){
