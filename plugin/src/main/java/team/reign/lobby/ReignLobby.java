@@ -18,6 +18,7 @@ public class ReignLobby extends JavaPlugin {
     @Override
     public void onEnable() {
         List<Loader> loaders = Arrays.asList(new ListenerLoader(this), new FileCreator(this));
+        loaders.forEach(Loader::load);
         log("&c[ReignLobby]&8: &fCore activado correctamente!");
         log("&fEstás usando la version: &c" + version);
     }
