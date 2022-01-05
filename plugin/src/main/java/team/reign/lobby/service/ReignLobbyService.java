@@ -26,7 +26,6 @@ public class ReignLobbyService implements Service {
     @Override
     public void stop(){
         log("&c[ReignLobby]&8: &fCore desactivado correctamente!");
-        log("&6Hasta pronto!");
     }
 
     private void registerLoaders(Loader... loaders){
