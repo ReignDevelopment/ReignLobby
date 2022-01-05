@@ -1,4 +1,4 @@
-package team.reign.lobby.listeners.player;
+package team.reign.lobby.listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -7,15 +7,15 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import team.reign.lobby.file.YamlFile;
 import team.reign.lobby.file.YamlFileRegistry;
-import team.reign.lobby.util.ChatUtil;
 
 import java.util.List;
 
 public class JoinListener implements Listener {
 
-    private final YamlFile messages;
+    private final YamlFile config, messages;
 
     public JoinListener(YamlFileRegistry yamlFileRegistry) {
+        this.config = yamlFileRegistry.getFile("config");
         this.messages = yamlFileRegistry.getFile("messages");
     }
 

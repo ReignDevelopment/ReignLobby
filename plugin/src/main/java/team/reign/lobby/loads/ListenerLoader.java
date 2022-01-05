@@ -1,13 +1,12 @@
-package team.reign.lobby.listeners;
+package team.reign.lobby.loads;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
-import team.reign.lobby.Loader;
 import org.bukkit.event.Listener;
 import team.reign.lobby.ReignLobby;
 import team.reign.lobby.file.FileCreator;
-import team.reign.lobby.listeners.player.JoinListener;
-import team.reign.lobby.listeners.server.WorldListener;
+import team.reign.lobby.listener.JoinListener;
+import team.reign.lobby.loader.Loader;
 
 
 public class ListenerLoader implements Loader {
@@ -18,12 +17,13 @@ public class ListenerLoader implements Loader {
     public ListenerLoader(ReignLobby reignLobby) {
         this.reignLobby = reignLobby;
         this.fileCreator = new FileCreator(reignLobby);
+        load();
     }
 
     @Override
     public void load() {
-        registerListeners(new JoinListener(fileCreator.getYamlFileRegistry())
-                         ,new WorldListener(reignLobby));
+        registerListeners(new JoinListener(fileCreator.getYamlFileRegistry()));;
+
     }
 
     private void registerListeners(Listener... listeners){

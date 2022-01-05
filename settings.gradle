@@ -1,3 +1,0 @@
-rootProject.name = 'ReignLobby'
-include("plugin")
-include("api")

@@ -1,4 +1,4 @@
-package team.reign.lobby.listeners.server;
+package team.reign.lobby.listener;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -8,10 +8,10 @@ import team.reign.lobby.ReignLobby;
 
 public class WorldListener implements Listener {
 
-    private final ReignLobby reignLobby;
+    private final ReignLobby lobby;
 
-    public WorldListener(ReignLobby reignLobby) {
-        this.reignLobby = reignLobby;
+    public WorldListener(ReignLobby lobby) {
+        this.lobby = lobby;
     }
 
     @EventHandler

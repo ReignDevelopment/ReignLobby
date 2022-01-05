@@ -1,7 +1,7 @@
 package team.reign.lobby.file;
 
 import org.bukkit.configuration.InvalidConfigurationException;
-import team.reign.lobby.Loader;
+import team.reign.lobby.loader.Loader;
 import team.reign.lobby.ReignLobby;
 
 import java.io.IOException;
