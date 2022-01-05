@@ -13,10 +13,9 @@ import java.util.List;
 
 public class JoinListener implements Listener {
 
-    private final YamlFile config, messages;
+    private final YamlFile messages;
 
     public JoinListener(YamlFileRegistry yamlFileRegistry) {
-        this.config = yamlFileRegistry.getFile("config");
         this.messages = yamlFileRegistry.getFile("messages");
     }
 
