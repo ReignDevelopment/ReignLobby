@@ -17,4 +17,7 @@ dependencies {
     api(project(":api"))
     implementation("me.fixeddev:commandflow-bukkit:0.4.0")
     compileOnly("org.spigotmc:spigot:1.8.8-R0.1-SNAPSHOT")
+    implementation ("me.yushust.message:core:6.0.17")
+    //implementation("team.unnamed.scoreboard:scoreboard-api:VERSION")
+    implementation ("team.unnamed.gui:core:2.2.1")
 }
