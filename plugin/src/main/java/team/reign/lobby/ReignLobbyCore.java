@@ -10,7 +10,11 @@ import team.reign.lobby.util.ChatUtil;
 
 public class ReignLobbyCore implements Core {
 
-    private static final ReignLobby lobby = new ReignLobby();
+    private final ReignLobby lobby;
+
+    public ReignLobbyCore(ReignLobby lobby) {
+        this.lobby = lobby;
+    }
 
     @Override
     public void init(){
@@ -28,10 +32,6 @@ public class ReignLobbyCore implements Core {
         for(Loader loader : loaders) {
             loader.load();
         }
-    }
-
-    public static ReignLobby getLobby() {
-        return lobby;
     }
 
     public void log(String string){

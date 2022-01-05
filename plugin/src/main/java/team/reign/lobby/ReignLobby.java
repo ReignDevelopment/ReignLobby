@@ -4,7 +4,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class ReignLobby extends JavaPlugin {
 
-    private final ReignLobbyCore lobbyCore = new ReignLobbyCore();
+    private final ReignLobbyCore lobbyCore = new ReignLobbyCore(this);
 
     @Override
     public void onEnable() {
