@@ -15,45 +15,20 @@ public class YamlFile extends YamlConfiguration {
 
     private final File file;
 
-    public YamlFile(Plugin plugin, String fileName, String folderPath, File folder)
-            throws IOException, InvalidConfigurationException {
+    public YamlFile(Plugin plugin, String fileName) throws IOException, InvalidConfigurationException {
         fileName += ".yml";
-        this.file = new File(folder, fileName);
+        this.file = new File(plugin.getDataFolder(), fileName);
 
-        boolean created = true;
-
-        if (!folder.exists()) {
-            created = folder.mkdirs();
-        }
-
-        if (created) {
-            if (!file.exists()) {
-                String path = folderPath + File.separator + fileName;
-                if (plugin.getResource(path) != null) {
-                    plugin.saveResource(path, false);
-                } else {
-                    save(file);
-                }
-                load(file);
-                return;
+        if(!file.exists()) {
+            String path = plugin.getDataFolder() + File.separator + fileName;
+            if(plugin.getResource(path) != null) {
+                plugin.saveResource(path, false);
+            } else {
+                save(file);
             }
-
             load(file);
-            save(file);
         }
-    }
 
-    public YamlFile(Plugin plugin, String fileName)
-            throws IOException, InvalidConfigurationException {
-        this(plugin, fileName, plugin.getName(), plugin.getDataFolder());
-    }
-
-    public YamlFile(Plugin plugin, String fileName, String folderPath)
-            throws IOException, InvalidConfigurationException {
-        this(
-                plugin, fileName, folderPath,
-                new File(plugin.getDataFolder(), folderPath)
-            );
     }
 
     public void reload() throws IOException, InvalidConfigurationException {
@@ -84,4 +59,5 @@ public class YamlFile extends YamlConfiguration {
 
         return list;
     }
+
 }

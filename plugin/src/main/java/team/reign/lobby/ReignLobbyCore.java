@@ -2,6 +2,7 @@ package team.reign.lobby;
 
 import team.reign.lobby.core.Core;
 import org.bukkit.Bukkit;
+import team.reign.lobby.file.FileCreator;
 import team.reign.lobby.loads.ListenerLoader;
 import team.reign.lobby.loader.Loader;
 import team.reign.lobby.util.ChatUtil;
@@ -12,7 +13,7 @@ public class ReignLobbyCore implements Core {
 
     @Override
     public void init(){
-        registerLoaders(new ListenerLoader(lobby));
+        registerLoaders(new ListenerLoader(lobby), new FileCreator(lobby));
         log("&c[ReignLobby]&8: &fCore activado correctamente!");
     }
 
@@ -32,7 +33,7 @@ public class ReignLobbyCore implements Core {
         return lobby;
     }
 
-    public void log (String string){
+    public void log(String string){
         Bukkit.getConsoleSender().sendMessage(ChatUtil.color(string));
     }
 }
