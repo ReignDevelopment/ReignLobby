@@ -6,7 +6,17 @@
 #######################################################
 
 messages:
-  nopermission: "&CNo tienes permiso para ejecutar este comando."
-  vipjoin:
+  unknown: "&cUnknown command or action"
+  no-permission: "&cYou don't have permission to do that."
+  help:
     - ""
     - ""
+    - ""
+  welcome-message: "&8[&a+&8] &7Welcome &6%player% &7to server"
+  leave-message: "&8[&c-&8] &6%player% &7has left the server"
+  join-vip:
+    - "&7&m------------------------------------"
+    - ""
+    - "&7Welcome &6%player% &7 to the server"
+    - ""
+    - "&7&m------------------------------------"
