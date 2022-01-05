@@ -12,21 +12,23 @@ import java.util.List;
 
 public class JoinListener implements Listener {
 
-    private final YamlFile config, messages;
+    private final YamlFile messages;
 
     public JoinListener(YamlFileRegistry yamlFileRegistry) {
-        this.config = yamlFileRegistry.getFile("config");
         this.messages = yamlFileRegistry.getFile("messages");
     }
 
     @EventHandler
     public void onJoinPlayer(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        List<String> messageVipJoin = messages.getStringList("message.vipjoin");
-        if (player.hasPermission("reignlobby.vipjoin")) {
+        List<String> messageVipJoin = messages.getStringList("message.join-vip");
+        messageVipJoin.replaceAll(line -> line.replace("%player%", player.getName()));
+        if (player.hasPermission("rlobby.donator")) {
             for(String message : messageVipJoin){
                 Bukkit.broadcastMessage(message);
             }
         }
+        String welcomeMessage = messages.getString("message.welcome-message").replace("%player%", player.getName());
+        event.setJoinMessage(welcomeMessage);
     }
 }
