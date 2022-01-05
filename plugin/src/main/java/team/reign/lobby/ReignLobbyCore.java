@@ -3,6 +3,7 @@ package team.reign.lobby;
 import team.reign.lobby.core.Core;
 import org.bukkit.Bukkit;
 import team.reign.lobby.file.FileCreator;
+import team.reign.lobby.loads.CommandLoader;
 import team.reign.lobby.loads.ListenerLoader;
 import team.reign.lobby.loader.Loader;
 import team.reign.lobby.util.ChatUtil;
@@ -13,7 +14,7 @@ public class ReignLobbyCore implements Core {
 
     @Override
     public void init(){
-        registerLoaders(new ListenerLoader(lobby), new FileCreator(lobby));
+        registerLoaders(new ListenerLoader(lobby), new CommandLoader(lobby), new FileCreator(lobby));
         log("&c[ReignLobby]&8: &fCore activado correctamente!");
     }
 
