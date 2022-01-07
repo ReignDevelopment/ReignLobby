@@ -9,6 +9,8 @@ import team.reign.lobby.loads.ListenerLoader;
 import team.reign.lobby.loader.Loader;
 import team.reign.lobby.util.ChatUtil;
 
+import java.util.Set;
+
 public class ReignLobbyService implements Service {
 
     private final ReignLobby lobby;

@@ -35,5 +35,4 @@ public class FileCreator implements Loader {
     public YamlFile getMessages() {
         return messages;
     }
-
 }
