@@ -1,4 +1,4 @@
-package team.reign.lobby.listener;
+package team.reign.lobby.listener.protect;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -6,6 +6,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.player.PlayerItemConsumeEvent;
 
 
 public class DamageListener implements Listener {
@@ -29,7 +30,10 @@ public class DamageListener implements Listener {
                 }
             }
         }
-
+    }
+    @EventHandler(priority = EventPriority.HIGHEST)
+    public void onConsume(PlayerItemConsumeEvent event){
+        event.setCancelled(true);
     }
 
 }
