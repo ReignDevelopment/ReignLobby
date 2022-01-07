@@ -19,8 +19,8 @@ public class YamlFile extends YamlConfiguration {
         fileName += ".yml";
         this.file = new File(plugin.getDataFolder(), fileName);
 
-        if(!file.exists()) {
-            if(plugin.getResource(fileName) != null) {
+        if (!file.exists()) {
+            if (plugin.getResource(fileName) != null) {
                 plugin.saveResource(fileName, false);
             } else {
                 save(file);
@@ -42,6 +42,15 @@ public class YamlFile extends YamlConfiguration {
     }
 
     @Override
+    public List<String> getStringList(String path) {
+        List<String> list = super.getStringList(path);
+
+        list.replaceAll(line -> translateAlternateColorCodes('&', line));
+
+        return list;
+    }
+
+    @Override
     public String getString(String path) {
         return translateAlternateColorCodes('&', super.getString(path));
     }
@@ -51,15 +60,6 @@ public class YamlFile extends YamlConfiguration {
         String s = super.getString(path, def);
 
         return s != null ? translateAlternateColorCodes('&', s) : def;
-    }
-
-    @Override
-    public List<String> getStringList(String path) {
-        List<String> list = super.getStringList(path);
-
-        list.replaceAll(line -> translateAlternateColorCodes('&', line));
-
-        return list;
     }
 
 }

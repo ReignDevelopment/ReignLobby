@@ -21,9 +21,9 @@ public class FileCreator implements Loader {
     @Override
     public void load() {
         try {
-           config = new YamlFile(lobby, "config");
-           messages = new YamlFile(lobby, "messages");
-        } catch(IOException | InvalidConfigurationException e) {
+            config = new YamlFile(lobby, "config");
+            messages = new YamlFile(lobby, "messages");
+        } catch (IOException | InvalidConfigurationException e) {
             e.printStackTrace();
         }
     }
