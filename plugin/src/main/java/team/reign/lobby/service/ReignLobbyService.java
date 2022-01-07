@@ -18,23 +18,24 @@ public class ReignLobbyService implements Service {
     }
 
     @Override
-    public void start(){
+    public void start() {
         registerLoaders(new FileCreator(lobby), new ListenerLoader(lobby), new CommandLoader(lobby));
+        log("");
         log("&c[ReignLobby]&8: &fCore activado correctamente!");
     }
 
     @Override
-    public void stop(){
+    public void stop() {
         log("&c[ReignLobby]&8: &fCore desactivado correctamente!");
     }
 
-    private void registerLoaders(Loader... loaders){
-        for(Loader loader : loaders) {
+    private void registerLoaders(Loader... loaders) {
+        for (Loader loader : loaders) {
             loader.load();
         }
     }
 
-    public void log(String string){
+    public void log(String string) {
         Bukkit.getConsoleSender().sendMessage(ChatUtil.color(string));
     }
 }

@@ -19,11 +19,15 @@ public class LobbyCommand implements CommandClass {
         this.messages = fileCreator.getMessages();
     }
 
-    @Command(names = {"help" , ""}, permission = "rlobby.admin", desc = "Help command.")
+    @Command(names = {"help" , ""}, permission = "rlobby.help", desc = "Help command.")
     public void helpCommand(CommandSender sender){
         List<String> helpList = messages.getStringList("messages.help");
         for(String message : helpList){
             sender.sendMessage(message);
         }
+    }
+    @Command(names = {"reload",""}, permission = "rlobby.reload",desc = "Reload command.")
+    public void reloadCommand(CommandSender sender){
+
     }
 }
