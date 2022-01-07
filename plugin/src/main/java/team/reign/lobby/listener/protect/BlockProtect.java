@@ -8,11 +8,11 @@ import team.reign.lobby.ReignLobby;
 import team.reign.lobby.file.FileCreator;
 import team.reign.lobby.file.YamlFile;
 
-public class BlockListener implements Listener {
+public class BlockProtect implements Listener {
 
     private final YamlFile config;
 
-    public BlockListener(ReignLobby lobby) {
+    public BlockProtect(ReignLobby lobby) {
         FileCreator fileCreator = new FileCreator(lobby);
         this.config = fileCreator.getMessages();
     }
@@ -20,14 +20,14 @@ public class BlockListener implements Listener {
     @EventHandler
     public void onBreak(BlockBreakEvent event) {
         if (config.getBoolean("lobby-protection")) {
-            event.setCancelled(true);
+            event.setCancelled(false);
         }
     }
 
     @EventHandler
     public void onPlace(BlockPlaceEvent event) {
         if (config.getBoolean("lobby-protection")) {
-            event.setCancelled(true);
+            event.setCancelled(false);
         }
     }
 }

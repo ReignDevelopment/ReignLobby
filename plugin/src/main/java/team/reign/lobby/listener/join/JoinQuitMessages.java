@@ -18,13 +18,15 @@ public class JoinQuitMessages implements Listener {
         FileCreator fileCreator = new FileCreator(lobby);
         this.messages = fileCreator.getMessages();
     }
+
     @EventHandler
     public void onLeavePlayer(PlayerQuitEvent event) {
         Player player = event.getPlayer();
         String leaveMessage = messages.getString("message.leave-message").replace("%player%", player.getName());
         event.setQuitMessage(leaveMessage);
     }
-    @EventHandler (priority = EventPriority.HIGHEST)
+
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onJoinPlayer(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         String welcomeMessage = messages.getString("messages.welcome-message").replace("%player%", player.getName());

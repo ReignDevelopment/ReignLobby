@@ -7,8 +7,8 @@ import team.reign.lobby.ReignLobby;
 import team.reign.lobby.listener.join.JoinDonator;
 import team.reign.lobby.listener.join.JoinFly;
 import team.reign.lobby.listener.join.JoinQuitMessages;
-import team.reign.lobby.listener.protect.BlockListener;
-import team.reign.lobby.listener.protect.DamageListener;
+import team.reign.lobby.listener.protect.BlockProtect;
+import team.reign.lobby.listener.protect.DamageProtect;
 import team.reign.lobby.loader.Loader;
 
 
@@ -25,7 +25,7 @@ public class ListenerLoader implements Loader {
     public void load() {
         registerListeners(new JoinDonator(lobby),
                           new JoinQuitMessages(lobby),
-                          new DamageListener(), new BlockListener(lobby), new JoinFly());
+                          new DamageProtect(), new BlockProtect(lobby), new JoinFly());
 
     }
 
