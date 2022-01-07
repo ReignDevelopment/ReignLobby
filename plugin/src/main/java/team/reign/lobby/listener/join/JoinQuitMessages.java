@@ -22,7 +22,7 @@ public class JoinQuitMessages implements Listener {
     @EventHandler
     public void onLeavePlayer(PlayerQuitEvent event) {
         Player player = event.getPlayer();
-        String leaveMessage = messages.getString("message.leave-message").replace("%player%", player.getName());
+        String leaveMessage = messages.getString("messages.leave-message").replace("%player%", player.getName());
         event.setQuitMessage(leaveMessage);
     }
 
