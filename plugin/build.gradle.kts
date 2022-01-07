@@ -1,7 +1,7 @@
 plugins {
     id("com.github.johnrengelman.shadow") version("7.1.1")
 }
-//Para poner en plugin.yml @version@
+
 tasks {
     processResources {
         filesMatching("**/*.yml") {
