@@ -4,9 +4,11 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.event.Listener;
 import team.reign.lobby.ReignLobby;
-import team.reign.lobby.listener.DamageListener;
-import team.reign.lobby.listener.JoinListener;
-import team.reign.lobby.listener.QuitListener;
+import team.reign.lobby.listener.join.JoinDonator;
+import team.reign.lobby.listener.join.JoinFly;
+import team.reign.lobby.listener.join.JoinQuitMessages;
+import team.reign.lobby.listener.protect.BlockListener;
+import team.reign.lobby.listener.protect.DamageListener;
 import team.reign.lobby.loader.Loader;
 
 
@@ -21,9 +23,9 @@ public class ListenerLoader implements Loader {
 
     @Override
     public void load() {
-        registerListeners(new JoinListener(lobby),
-                          new QuitListener(lobby),
-                          new DamageListener());;
+        registerListeners(new JoinDonator(lobby),
+                          new JoinQuitMessages(lobby),
+                          new DamageListener(), new BlockListener(lobby), new JoinFly());
 
     }
 
